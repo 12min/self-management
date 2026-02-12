@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --green: #16a34a;
+    --green-bg: #dcfce7;
+    --yellow: #ca8a04;
+    --yellow-bg: #fef9c3;
+    --red: #dc2626;
+    --red-bg: #fee2e2;
+    --blue: #2563eb;
+    --blue-bg: #dbeafe;
+    --gray: #6b7280;
+    --gray-bg: #f3f4f6;
+    --dark: #1f2937;
+    --border: #e5e7eb;
+    --orange: #ea580c;
+    --orange-bg: #fff7ed;
+  }
+
+  body {
+    @apply bg-gray-50 text-dark;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer utilities {
+  .task-item:hover .remove-task-btn {
+    opacity: 1;
+  }
+}
