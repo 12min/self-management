@@ -18,6 +18,13 @@ const defaultState: DashboardState = {
       status: 'in-review',
       statusColor: 'blue',
       url: 'https://app.clickup.com/t/86af04vwz'
+    },
+    {
+      id: '86afba1tb',
+      title: '[Side Quest] Adicionar Mapeamento do Plano "Quarterly-Gold" no Billing Service',
+      status: 'in-review',
+      statusColor: 'blue',
+      url: 'https://app.clickup.com/t/86afba1tb'
     }
   ],
   today: [
