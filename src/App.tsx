@@ -14,7 +14,7 @@ import { useTaskManager } from './hooks/useTaskManager';
 import type { Task } from './types';
 
 function App() {
-  const { state, moveTask, removeTask, updateTask, clearZone, resetToDefault } = useTaskManager();
+  const { state, moveTask, removeTask, updateTask, addTask, clearZone, resetToDefault } = useTaskManager();
   const [activeTask, setActiveTask] = useState<Task | null>(null);
 
   const sensors = useSensors(
@@ -115,6 +115,7 @@ function App() {
           tasks={state.yesterday}
           onRemoveTask={(taskId) => removeTask(taskId, 'yesterday')}
           onUpdateTask={(taskId, updates) => updateTask(taskId, 'yesterday', updates)}
+          onAddTask={(task) => addTask(task, 'yesterday')}
           onClearZone={() => clearZone('yesterday')}
           showClickUpTag
         />
@@ -125,6 +126,7 @@ function App() {
           tasks={state.today}
           onRemoveTask={(taskId) => removeTask(taskId, 'today')}
           onUpdateTask={(taskId, updates) => updateTask(taskId, 'today', updates)}
+          onAddTask={(task) => addTask(task, 'today')}
           onClearZone={() => clearZone('today')}
         />
 

@@ -107,6 +107,13 @@ export function useTaskManager() {
     }));
   }, []);
 
+  const addTask = useCallback((task: Task, zone: 'yesterday' | 'today') => {
+    setState((prev) => ({
+      ...prev,
+      [zone]: [...prev[zone], task]
+    }));
+  }, []);
+
   const clearZone = useCallback((zone: 'yesterday' | 'today') => {
     setState((prev) => ({
       ...prev,
@@ -124,6 +131,7 @@ export function useTaskManager() {
     moveTask,
     removeTask,
     updateTask,
+    addTask,
     clearZone,
     resetToDefault
   };

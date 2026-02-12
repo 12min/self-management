@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { useDroppable } from '@dnd-kit/core';
 import {
   SortableContext,
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { TaskItem } from './TaskItem';
+import { AddTaskModal } from './AddTaskModal';
 import type { Task } from '../types';
 
 interface TaskZoneProps {
@@ -12,6 +14,7 @@ interface TaskZoneProps {
   tasks: Task[];
   onRemoveTask: (taskId: string) => void;
   onUpdateTask: (taskId: string, updates: Partial<Task>) => void;
+  onAddTask: (task: Task) => void;
   onClearZone: () => void;
   showClickUpTag?: boolean;
 }
@@ -22,9 +25,11 @@ export function TaskZone({
   tasks,
   onRemoveTask,
   onUpdateTask,
+  onAddTask,
   onClearZone,
   showClickUpTag = false,
 }: TaskZoneProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { setNodeRef, isOver } = useDroppable({ id });
 
   const handleClear = () => {
@@ -44,13 +49,22 @@ export function TaskZone({
             </span>
           )}
         </h2>
-        <button
-          onClick={handleClear}
-          className="bg-red text-white border-none px-3 py-1.5 rounded text-xs font-semibold cursor-pointer transition-all hover:bg-red-700 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 flex items-center gap-1"
-        >
-          <span>🗑️</span>
-          <span>Clean List</span>
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-blue text-white border-none px-3 py-1.5 rounded text-xs font-semibold cursor-pointer transition-all hover:bg-blue-600 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 flex items-center gap-1"
+          >
+            <span>➕</span>
+            <span>Add Task</span>
+          </button>
+          <button
+            onClick={handleClear}
+            className="bg-red text-white border-none px-3 py-1.5 rounded text-xs font-semibold cursor-pointer transition-all hover:bg-red-700 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 flex items-center gap-1"
+          >
+            <span>🗑️</span>
+            <span>Clean List</span>
+          </button>
+        </div>
       </div>
 
       <div
@@ -75,6 +89,13 @@ export function TaskZone({
           </SortableContext>
         )}
       </div>
+
+      <AddTaskModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onAdd={onAddTask}
+        zone={id as 'yesterday' | 'today'}
+      />
     </div>
   );
 }
