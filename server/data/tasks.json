@@ -1,0 +1,55 @@
+{
+  "yesterday": [
+    {
+      "id": "86af1b3ba",
+      "title": "Implement Tenjin S2S Purchase Tracking — Analyse values coming in Tenjin",
+      "status": "done",
+      "statusColor": "green",
+      "url": "https://app.clickup.com/t/86af1b3ba"
+    },
+    {
+      "id": "86afba08v",
+      "title": "[Side Quest] Add Quarterly-Gold Plan Mapping in Billing Service and Admin Activation Functionality",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afba08v"
+    },
+    {
+      "id": "86afbknn6",
+      "title": "[Side Quest] Upload updated book covers",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afbknn6"
+    },
+    {
+      "id": "86afac3dp",
+      "title": "[Side Quest] [Bug] Login Modal Crash in Production",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afac3dp"
+    }
+  ],
+  "today": [
+    {
+      "id": "86afba08v",
+      "title": "[Side Quest] Add Quarterly-Gold Plan Mapping in Billing Service and Admin Activation Functionality",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afba08v"
+    },
+    {
+      "id": "86afbknn6",
+      "title": "[Side Quest] Upload updated book covers",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afbknn6"
+    },
+    {
+      "id": "86afb1tne",
+      "title": "[Side Quest][SEO TECH] Canonical Pages Issue Fix",
+      "status": "in-progress",
+      "statusColor": "yellow",
+      "url": "https://app.clickup.com/t/86afb1tne"
+    }
+  ]
+}
